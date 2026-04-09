@@ -3,7 +3,7 @@
   Design Style: Silent Luxury (Minimal, Elegant, Professional)
 */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;600;700&display=swap');
+@import url('assets/fonts/google-fonts/fonts.css');
 
 :root {
     /* Colors */
@@ -445,7 +445,7 @@ footer {
     min-height: 90vh;
     display: flex;
     align-items: center;
-    background: radial-gradient(circle at top right, var(--section-light) 0%, transparent 40%);
+    background: var(--white);
 }
 
 .hero .container {
@@ -471,6 +471,15 @@ footer {
 .hero-btns {
     display: flex;
     gap: 16px;
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .hero-image {
@@ -726,12 +735,24 @@ footer {
     color: var(--text-neutral);
 }
 
-.faq-item.active .faq-icon {
+.faq-item.is-open .faq-icon {
     transform: rotate(180deg);
 }
-
-.faq-item.active .faq-body {
+.faq-item.is-open .faq-body {
     max-height: 500px; /* Increased for longer "strong" content */
+}
+
+.faq-content {
+    padding: 0 24px 24px;
+    color: var(--text-neutral);
+    opacity: 0;
+    transform: translateY(10px);
+    transition: all 0.3s ease;
+}
+
+.faq-item.is-open .faq-content {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .faq-footer {
@@ -813,6 +834,32 @@ footer {
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Staggered Animation Delays */
+.delay-1 { transition-delay: 0.15s !important; }
+.delay-2 { transition-delay: 0.3s !important; }
+.delay-3 { transition-delay: 0.45s !important; }
+.delay-4 { transition-delay: 0.6s !important; }
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal-scale.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.fade-in {
+    animation: fadeIn 1.2s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* Responsive */

@@ -48,16 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
     faqItems.forEach(item => {
         const header = item.querySelector('.faq-header');
         header.addEventListener('click', () => {
-            const isActive = item.classList.contains('active');
+            const isOpen = item.classList.contains('is-open');
             
             // Close all other items for a cleaner look
             faqItems.forEach(otherItem => {
-                otherItem.classList.remove('active');
+                otherItem.classList.remove('is-open');
             });
             
             // Toggle current item
-            if (!isActive) {
-                item.classList.add('active');
+            if (!isOpen) {
+                item.classList.add('is-open');
             }
         });
     });
