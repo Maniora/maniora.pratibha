@@ -1,5 +1,5 @@
 /**
- * Prathibha Career Coaching - Interactions
+ * Prathibha Certified Life Clarity Coaching - Interactions
  */
 
 document.addEventListener('DOMContentLoaded', () => {
